@@ -58,11 +58,12 @@
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeAll;
     
-    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_home_title"]];
-    self.navigationItem.titleView = titleView;
+    //UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_home_title"]];
+    //self.navigationItem.titleView = titleView;
+    self.title = @"《仁王｜NIOH》";
     
-    [self addNavigationBarLeftSearchItem];
-    [self addNavigationBarRightMeItem];
+    //[self addNavigationBarLeftSearchItem];
+    //[self addNavigationBarRightMeItem];
     
     [self initDatas];
     [self setupViews];
@@ -97,7 +98,7 @@
         pullToRefreshLeft.imageIcon = [UIImage new];
         
         pullToRefreshRight = [pagingScrollView.scrollView addPullToRefreshPosition:AAPullToRefreshPositionRight actionHandler:^(AAPullToRefresh *v) {
-            [weakSelf showPreviousList];
+            //[weakSelf showPreviousList];
             [v performSelector:@selector(stopIndicatorAnimation) withObject:nil afterDelay:1];
         }];
         pullToRefreshRight.borderColor = MLBAppThemeColor;
@@ -112,7 +113,7 @@
         
         pagingScrollView;
     });
-    
+    /*
     _diaryButton = ({
         UIButton *button = [MLBUIFactory buttonWithImageName:@"diary_normal" highlightImageName:nil target:self action:@selector(diaryButtonClicked)];
         [_pagingScrollView insertSubview:button atIndex:0];
@@ -162,6 +163,7 @@
         
         button;
     });
+     */
 }
 
 - (void)loadCache {

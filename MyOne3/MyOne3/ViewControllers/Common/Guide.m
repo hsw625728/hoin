@@ -12,6 +12,15 @@
 //#import "AppDelegate.h"
 
 @implementation Guide
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        self.url = [[NSString alloc] init] ;
+    }
+    
+    return self;
+}
 
 -(void)viewDidLoad
 {
@@ -19,23 +28,20 @@
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeAll;
     
-    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_home_title"]];
-    self.navigationItem.titleView = titleView;
+    //UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_home_title"]];
+    //self.navigationItem.titleView = titleView;
+    self.navigationController.title = self.url;
     
-    [self addNavigationBarLeftSearchItem];
-    [self addNavigationBarRightMeItem];
+    //[self addNavigationBarLeftSearchItem];
+    //[self addNavigationBarRightMeItem];
     
-    self.title = @"图文攻略";
+    self.title = self.url;
     //AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     NSString *path = [[NSString alloc] init];
     NSURLRequest *request = [[NSURLRequest alloc] init];
-    //if ([((NSString*)appDelegate.guideURL) isEqualToString:@"guide"]){
-        path = [[NSBundle mainBundle] pathForResource:@"guide" ofType:@"html"];
-        request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
-        //request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://mengyoutu.cn/dungeon/dungeonrecord.php?deviceID=%@&nickName=%@&userDesc=%@&record=%@", @"deviceID100",@"PangXie",@"This is my name.", @"1234567890"]]];
-    //}else if ([((NSString*)appDelegate.guideURL) isEqualToString:@"rank"]){
-    //    request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://mengyoutu.cn/dungeon//dungeongetrecord.php"]];
-    //}
+    path = [[NSBundle mainBundle] pathForResource:self.url ofType:@"html"];
+    request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
+   
     
     [self.webView loadRequest:request];
 }
@@ -47,6 +53,7 @@
 - (IBAction)closeGuide:(id)sender {
     [self performSegueWithIdentifier:@"closeGuide" sender:self];
 }
+
 
 
 

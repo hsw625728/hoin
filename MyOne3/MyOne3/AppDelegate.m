@@ -33,11 +33,11 @@
     NSString *version = [MLBUtilities appCurrentVersion];
     NSString *build = [MLBUtilities appCurrentBuild];
     NSString *versionAndBuild = [NSString stringWithFormat:@"%@_%@", version, build];
-    if (![[UserDefaults objectForKey:MLBLastShowIntroduceVersionAndBuild] isEqualToString:versionAndBuild]) {
-        _window.rootViewController = [[MLBIntroduceViewController alloc] init];
-    } else {
+    //if (![[UserDefaults objectForKey:MLBLastShowIntroduceVersionAndBuild] //isEqualToString:versionAndBuild]) {
+    //    _window.rootViewController = [[MLBIntroduceViewController alloc] init];
+    //} else {
         [self showMainTabBarControllers];
-    }
+    //}
     
     return YES;
 }

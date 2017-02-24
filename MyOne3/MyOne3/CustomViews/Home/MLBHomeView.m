@@ -315,10 +315,10 @@ NSString *const kMLBHomeViewID = @"MLBHomeViewID";
     self.parentViewController = parentViewController;
     [_coverView mlb_sd_setImageWithURL:homeItem.imageURL placeholderImageName:@"home_cover_placeholder" cachePlachoderImage:NO];
     _titleLabel.text = homeItem.authorName;
-    _weatherView.image = [UIImage imageNamed:@"light_rain"];
-    _temperatureLabel.text = @"6℃";
-    _locationLabel.text = @"杭州";
-    _dateLabel.text = [MLBUtilities stringDateFormatWithEEEddMMMyyyyByNormalDateString:homeItem.makeTime];
+    _weatherView.image = [UIImage imageNamed:@""];
+    _temperatureLabel.text = @"";
+    _locationLabel.text = @"";
+    _dateLabel.text = @"左右滑动翻页";//[MLBUtilities stringDateFormatWithEEEddMMMyyyyByNormalDateString:homeItem.makeTime];
     
     _contentTextView.attributedText = [MLBUtilities mlb_attributedStringWithText:homeItem.content lineSpacing:MLBLineSpacing font:_contentTextView.font textColor:_contentTextView.textColor];
     

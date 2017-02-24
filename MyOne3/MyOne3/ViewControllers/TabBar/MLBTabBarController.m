@@ -25,11 +25,12 @@
     if (self) {
         MLBHomeViewController *homeViewController = [[MLBHomeViewController alloc] init];
         UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
-        homeNavigationController.title = MLBHomeTitle;
+        homeNavigationController.title = @"首页";
         
-        MLBReadViewController *readViewController = [[MLBReadViewController alloc] init];
+        Guide *readViewController = [[Guide alloc] initWithNibName:@"Guide" bundle:nil];
+        [readViewController setUrl:@"奖杯一览"];
         UINavigationController *readNavigationController = [[UINavigationController alloc] initWithRootViewController:readViewController];
-        readNavigationController.title = MLBReadTitle;
+        readNavigationController.title = @"奖杯一览";
         
         /*MLBMusicViewController *musicViewController = [[MLBMusicViewController alloc] init];
         UINavigationController *musicNavigationController = [[UINavigationController alloc] initWithRootViewController:musicViewController];
@@ -38,14 +39,15 @@
         //Guide
         
         Guide *musicViewController = [[Guide alloc] initWithNibName:@"Guide" bundle:nil];
+        [musicViewController setUrl:@"图文攻略"];
         UINavigationController *musicNavigationController = [[UINavigationController alloc] initWithRootViewController:musicViewController];
-        musicNavigationController.title = MLBMusicTitle;
-        
+        musicNavigationController.title = @"图文攻略";
+        /*
         MLBMovieViewController *movieViewController = [[MLBMovieViewController alloc] init];
         UINavigationController *movieNavigationController = [[UINavigationController alloc] initWithRootViewController:movieViewController];
         movieNavigationController.title = MLBMovieTitle;
-        
-        [self setViewControllers:@[homeNavigationController, readNavigationController, musicNavigationController, movieNavigationController]];
+        */
+        [self setViewControllers:@[homeNavigationController, readNavigationController, musicNavigationController/*, movieNavigationController*/]];
         [self setupTabBar];
         
         [self createCacheFilesFolder];

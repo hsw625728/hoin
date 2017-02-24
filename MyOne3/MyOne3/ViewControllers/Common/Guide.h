@@ -11,9 +11,10 @@
 @interface Guide : MLBBaseViewController
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-
+@property (nonatomic, copy) NSString *url;
 //@property (weak, nonatomic) IBOutlet UIWebView *webView;
 //@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
+-(void)setUrl:(NSString *)url;
 
 @end

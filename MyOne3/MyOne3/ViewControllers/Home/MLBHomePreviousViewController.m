@@ -40,7 +40,7 @@
     
     [self initDatas];
     [self setupViews];
-    [self requestPeriodList];
+    //[self requestPeriodList];
 }
 
 #pragma mark - Private Method
